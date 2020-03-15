@@ -17,18 +17,24 @@ def home(response):
 
             imdb_instance = IMDb()
             movie_details = imdb_instance.get_movie(int(final_url_id))
-
             movie_title = movie_details['title']
             movie_summary = movie_details['plot outline']
 
             writers = movie_details['writers']
-            movie_writers = ','.join(map(str,writers))
+            movie_writers = ""
+            for sample in writers:
+                movie_writers += str(sample)+','
+            print(movie_writers)
 
             directors = movie_details['directors']
-            movie_directors = ','.join(map(str,directors))
+            movie_directors = ""
+            for sample in directors:
+                movie_directors += sample['name']+','
 
             cast = movie_details['cast']
-            movie_cast = ','.join(map(str,cast))
+            movie_cast = ""
+            for sample in cast:
+                movie_cast +=sample['name']+','
 
             movie_rating = movie_details['rating']
 
@@ -36,8 +42,6 @@ def home(response):
             database_instance.save()
 
             count = 1
-            # print(database_instance[2])
-            return render(response,'home.html',{"title":movie_title,"summary":movie_summary,"directors":movie_directors,"writers":movie_directors,"stars":movie_cast,"rating":movie_rating,"image_url":movie_details['full-size cover url'],"output":count,"url_get":url_form})
-    else:
+            return render(response,'home.html',{"title":movie_title,"summary":movie_summary,"directors":movie_directors,"writers":movie_writers,"stars":movie_cast,"rating":movie_rating,"image_url":movie_details['full-size cover url'],"output":count,"url_get":url_form})    else:
         url_form = URL_GET()
     return render(response,'home.html',{"url_get":url_form,"output":count})
