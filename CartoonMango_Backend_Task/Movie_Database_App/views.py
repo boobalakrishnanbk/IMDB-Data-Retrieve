@@ -24,7 +24,6 @@ def home(response):
             movie_writers = ""
             for sample in writers:
                 movie_writers += str(sample)+','
-            print(movie_writers)
 
             directors = movie_details['directors']
             movie_directors = ""
