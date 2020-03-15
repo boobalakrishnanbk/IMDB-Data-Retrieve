@@ -1,0 +1,52 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<!-- {% extends 'home.html' %} -->
+{% block content %}
+<!-- <div class="container">
+  <div class="card mx-auto" style="top:25%;">
+    <div class="card-body">
+
+
+
+    </div>
+  </div>
+</div> -->
+
+<div class="pb-1"   style="height: 100%; background-color: white;padding-bottom: 100px;">
+  <div class="card mx-auto " style="width: 70rem;top:10%;">
+    <div class="container"> <!-- Block parent element -->
+      <div class="card mx-auto" align="center" style="width: 20rem;height:25rem; top:10%;background-image: url({{image_url}});background-size: 100% 100%;">
+        <!-- <img src="{{image_url}}" height="50%" width="40%" alt="Card image cap" style="left: 20%;"> -->
+      </div>
+    </div>
+
+      <div class="card-body">
+        <div class="form-group">
+          <h1 class="text-center">{{title}}</h1>
+          <table class="table table-hover">
+            <p class="text-center">{{summary}}</p>
+            <tr>
+              <th>Directors</th>
+              <td>{{directors}}</td>
+            </tr>
+            <tr>
+              <th>Writers</th>
+              <td>{{writers}}</td>
+            </tr>
+            <tr>
+              <th>Stars</th>
+              <td>{{stars}}</td>
+            </tr>
+            <tr>
+              <th>Rating</th>
+              <td>{{rating}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}
