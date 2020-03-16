@@ -1,4 +1,4 @@
-
+{% load bootstrap4 %}
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -13,7 +13,7 @@
             {% block main %}
             <form  method="post">
               {% csrf_token %}
-              {{ url_get.as_p }}
+              {% bootstrap_form get_url %}
               <input type="submit" class="form-control btn btn-primary" name="" value="Go">
               {% if output == 1 %}
               <h3 class="text-muted">Scroll Down for the Result</h3>
@@ -66,14 +66,14 @@
               <th>Rating</th>
               <td>{{rating}}</td>
             </tr>
+            <tr>
+              <th>Json Format Output</th>
+              <td>{{ res }}</td>
+            </tr>
           </table>
         </div>
       </div>
     </div>
 </div>
-
-
 {% endblock %}
-
-
 {% endif %}
