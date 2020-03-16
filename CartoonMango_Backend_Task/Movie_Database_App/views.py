@@ -58,7 +58,7 @@ def home(request):
             movie_list = list(movie)
             # content = {'movie': movie}
             return JsonResponse(movie_list, safe=False)
-            # return render(request,'home.html',{"title":movie_title,"summary":movie_summary,"directors":movie_directors,"writers":movie_writers,"stars":movie_cast,"rating":movie_rating,"image_url":movie_details['full-size cover url'],"output":count,"get_url":url_form, 'res':res})
+            return render(request,'home.html',{"title":movie_title,"summary":movie_summary,"directors":movie_directors,"writers":movie_writers,"stars":movie_cast,"rating":movie_rating,"image_url":movie_details['full-size cover url'],"output":count,"get_url":url_form, 'res':res})
     else:
         url_form = URL_GET()
     return render(request,'home.html',{"get_url":url_form,"output":count, 'res':res})
