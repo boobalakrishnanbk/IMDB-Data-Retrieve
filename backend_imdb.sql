@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2020 at 11:30 AM
+-- Generation Time: Apr 08, 2020 at 06:36 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -196,24 +196,27 @@ CREATE TABLE `django_migrations` (
 --
 
 INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
-(1, 'Movie_Database_App', '0001_initial', '2020-03-15 12:54:14.073571'),
-(2, 'contenttypes', '0001_initial', '2020-03-15 12:54:14.756636'),
-(3, 'auth', '0001_initial', '2020-03-15 12:54:15.533812'),
-(4, 'admin', '0001_initial', '2020-03-15 12:54:19.685517'),
-(5, 'admin', '0002_logentry_remove_auto_add', '2020-03-15 12:54:20.929553'),
-(6, 'admin', '0003_logentry_add_action_flag_choices', '2020-03-15 12:54:20.972089'),
-(7, 'contenttypes', '0002_remove_content_type_name', '2020-03-15 12:54:21.968869'),
-(8, 'auth', '0002_alter_permission_name_max_length', '2020-03-15 12:54:22.004838'),
-(9, 'auth', '0003_alter_user_email_max_length', '2020-03-15 12:54:22.049904'),
-(10, 'auth', '0004_alter_user_username_opts', '2020-03-15 12:54:22.072526'),
-(11, 'auth', '0005_alter_user_last_login_null', '2020-03-15 12:54:22.443304'),
-(12, 'auth', '0006_require_contenttypes_0002', '2020-03-15 12:54:22.460772'),
-(13, 'auth', '0007_alter_validators_add_error_messages', '2020-03-15 12:54:22.489679'),
-(14, 'auth', '0008_alter_user_username_max_length', '2020-03-15 12:54:22.536134'),
-(15, 'auth', '0009_alter_user_last_name_max_length', '2020-03-15 12:54:22.581315'),
-(16, 'auth', '0010_alter_group_name_max_length', '2020-03-15 12:54:22.637053'),
-(17, 'auth', '0011_update_proxy_permissions', '2020-03-15 12:54:22.657998'),
-(18, 'sessions', '0001_initial', '2020-03-15 12:54:22.763962');
+(1, 'Movie_Database_App', '0001_initial', '2020-04-08 16:14:45.801794'),
+(2, 'Movie_Database_App', '0002_auto_20200316_2008', '2020-04-08 16:14:45.902727'),
+(3, 'Movie_Database_App', '0003_auto_20200408_2139', '2020-04-08 16:14:47.388801'),
+(4, 'contenttypes', '0001_initial', '2020-04-08 16:14:47.710012'),
+(5, 'auth', '0001_initial', '2020-04-08 16:14:48.938719'),
+(6, 'admin', '0001_initial', '2020-04-08 16:14:54.052558'),
+(7, 'admin', '0002_logentry_remove_auto_add', '2020-04-08 16:14:55.478894'),
+(8, 'admin', '0003_logentry_add_action_flag_choices', '2020-04-08 16:14:55.544254'),
+(9, 'contenttypes', '0002_remove_content_type_name', '2020-04-08 16:14:56.703576'),
+(10, 'auth', '0002_alter_permission_name_max_length', '2020-04-08 16:14:56.816574'),
+(11, 'auth', '0003_alter_user_email_max_length', '2020-04-08 16:14:56.928881'),
+(12, 'auth', '0004_alter_user_username_opts', '2020-04-08 16:14:57.026731'),
+(13, 'auth', '0005_alter_user_last_login_null', '2020-04-08 16:14:57.488711'),
+(14, 'auth', '0006_require_contenttypes_0002', '2020-04-08 16:14:57.516349'),
+(15, 'auth', '0007_alter_validators_add_error_messages', '2020-04-08 16:14:57.594142'),
+(16, 'auth', '0008_alter_user_username_max_length', '2020-04-08 16:14:57.711824'),
+(17, 'auth', '0009_alter_user_last_name_max_length', '2020-04-08 16:14:57.825531'),
+(18, 'auth', '0010_alter_group_name_max_length', '2020-04-08 16:14:57.922866'),
+(19, 'auth', '0011_update_proxy_permissions', '2020-04-08 16:14:57.975686'),
+(20, 'sessions', '0001_initial', '2020-04-08 16:14:58.191641'),
+(21, 'Movie_Database_App', '0004_auto_20200408_2155', '2020-04-08 16:25:28.481349');
 
 -- --------------------------------------------------------
 
@@ -236,10 +239,10 @@ CREATE TABLE `django_session` (
 CREATE TABLE `movie_database_app_imdb_database` (
   `id` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
-  `plot_summary` varchar(500) NOT NULL,
-  `directors` varchar(5000) NOT NULL,
-  `writers` varchar(5000) NOT NULL,
-  `stars` varchar(5000) NOT NULL,
+  `plot_summary` varchar(50000) NOT NULL,
+  `directors` varchar(1050) NOT NULL,
+  `writers` varchar(1050) NOT NULL,
+  `stars` varchar(1550) NOT NULL,
   `rating` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -248,7 +251,8 @@ CREATE TABLE `movie_database_app_imdb_database` (
 --
 
 INSERT INTO `movie_database_app_imdb_database` (`id`, `title`, `plot_summary`, `directors`, `writers`, `stars`, `rating`) VALUES
-(1, 'Joker', 'Joker centers around an origin of the iconic arch nemesis and is an original, standalone story not seen before on the big screen. Todd Phillips\' exploration of Arthur Fleck (Joaquin Phoenix), a man disregarded by society is not only a gritty character study, but also a broader cautionary tale.', 'Todd Phillips', 'Todd Phillips,Scott Silver,,Bob Kane,Bill Finger,Jerry Robinson', 'Joaquin Phoenix,Robert De Niro,Zazie Beetz,Frances Conroy,Brett Cullen,Shea Whigham,Bill Camp,Glenn Fleshler,Leigh Gill,Josh Pais,Rocco Luna,Marc Maron,Sondra James,Murphy Guyer,Douglas Hodge,Dante Pereira-Olson,Carrie Louise Putrello,Sharon Washington,Hannah Gross,Frank Wood,Brian Tyree Henry,April Grace,Mick Szal,Carl Lundstedt,Michael Benz,Ben Warheit,Gary Gulman,Sam Morril,Chris Redd,Mandela Bellamy,Demetrius Dotson II,Greer Barnes,Ray Iannicelli,Bryan Callen,Peter Benson,Vito Gerbino,Adam Quezada,Xavyer Ureña,Evan Rosado,Damian Emmanuel,Mike Troll,Jane Fergus,David Gibson,Tony D. Head,Jeff McCarthy,Kim Brockington,Troy Roberts,Lou Young,Michael-Scott Druckenmiller,Craig Austin,John Cenatiempo,Danny Schoch,Keith Buterbaugh,James Ciccone,Rich Campbell,Roger Squitero,Steven Elson,Graham Maby,John Alldred,Alonzo Wright,Jack Wilkins,Richard Baratta,Chris Angerman,Michael Bascle,Elizabeth Bluhm,Alissa Bourne,Winslow Bright,Matt Bruzzio,Jamaal Burcher,Marko Caka,Al Cardone,Dj Nino Carta,John Cashin,Jason John Cicalese,Jim Cleary,Brendan Patrick Connor,Blaise Corrigan,Vincent Cucuzza,Gino D\'Cafango,Aynsleigh Dann,Helen Darras,Alfredo David,Adam DeNully,Shamia Diaz,Brandon Essig,Mark Falvo,Isabella Ferreira,Phiona C Foster,Michael James Fry,Ryan Funigiello,Dennis Jay Funny,Jason Gadino,Alexandra Lopez Galan,Matthias Sebastiun Garry,Victor Gaspar,Brayson Goss,Robert Wayne Grondski,James P. Harkins,Dontae Hawkins,Joseph Hernandez,Ben Heyman,David Iacono,Sean Kilkenny,Paul Kulis,Melanie Christine Leon-Soon,Michael Lepre,Bob Leszczak,Mark Lotito,Adrienne Lovette,Justin Mahalsky,Mary Kate Malat,Branden Marlowe,Scott Martin,Lana McLellan,Alexander Mercier,Loretta Anne Miller,Nathan Nauroth,Mick O\'Rourke,Joe Ochman,Joey Pedras,David Valentino Penaga,Rich Petrillo,Annie Pisapia,Celeste Pisapía,Jon Douglas Rainey,Jivan Xander Ramesh,Tamiz U. Rezvi,Emmanuel Rodriguez,Ray Rosario,Shade Rupe,Edward Sass,Keith Schneider,Jesse Schratz,George Signoriello,Marie Smalley,Todd Smolar,Frank Sorgenti,Stephen Stanton,Frank Stellato,Thomas W. Stewart,Chuck Taber,Zak Takowsky,Justin Theroux,Vincent Tumeo,Matthew Vincini,Frank Volpe,Jaidon Walls,Julia Weldon,Alontae Myson Williams,Alex Xenos,Lauren Yaffe,Jaine Ye', 8.6);
+(1, 'The Gentlemen', 'A talented graduate of Oxford, using his unique mind and unprecedented audacity, came up with an illegal enrichment scheme using the estate of an impoverished English aristocracy. However, when he decides to sell his business to an influential clan of billionaires from the United States, no less charming but tough gentlemen stand in his way. An exchange of courtesies is planned, which certainly will not do without shootings and a couple of accidents.', 'Guy Ritchie', 'Guy Ritchie,Ivan Atkinson,Marn Davies,Guy Ritchie', 'Matthew McConaughey,Charlie Hunnam,Michelle Dockery,Jeremy Strong,Lyne Renee,Colin Farrell,Henry Golding,Tom Wu,Chidi Ajufo,Hugh Grant,Simon R. Barker,Eddie Marsan,Jason Wong,John Dagleish,Jordan Long,Lily Frazer,Gershwyn Eustache Jnr,Samuel West,Geraldine Somerville,Eliot Sumner,Franz Drameh,Christopher Evangelou,James Warren,Sean Sagar,Bugzy Malone,Tom Rhys Harries,Danny Griffin,Max Bennett,Eugenia Kuzmina,Bruce Chong,Ashley McGuire,George Asprey,Shanu Hazzan,Jack Jones,Sammy Williams,Ryan Dean,Guy List,Marvin Campbell,Will Mackay,Matt Sherren,Jason Hunjan,Maurice Lee,Russell Balogh,Togo Igawa,Jack O\'Connor,McKell David,Isaiah Zev,David Garrick,Tom Lambert,Andy Cheung,Mark Rathbone,Andrew Greenough,Timothy Siddall,Dominic Gibbs,Simon Adkins,Chloe Arrowsmith,Brittany Ashworth,Steve Barnett,Alex Batareanu,Elle Black,Mike Bodnar,Amor Evans,Nicholle Hembra,Oleg Hill,Jason Lines,Rubens Saboia,Steve Saunders,Jon Xue Zhang', 8),
+(2, '1917', 'April 1917, the Western Front. Two British soldiers are sent to deliver an urgent message to an isolated regiment. If the message is not received in time the regiment will walk into a trap and be massacred. To get to the regiment they will need to cross through enemy territory. Time is of the essence and the journey will be fraught with danger.', 'Sam Mendes', 'Sam Mendes,Krysty Wilson-Cairns', 'Dean-Charles Chapman,George MacKay,Daniel Mays,Colin Firth,Pip Carter,Andy Apollo,Paul Tinto,Josef Davies,Billy Postlethwaite,Gabriel Akuwudike,Andrew Scott,Spike Leighton,Robert Maaser,Gerran Howell,Adam Hugill,Mark Strong,Richard McCabe,Benjamin Adams,Anson Boon,Kenny Fullwood,Tommy French,Nabhaan Rizwan,Ryan Nolan,Elliot Baxter,Bogdan Kumshatsky,Kye Mckee,Claire Duburcq,Ivy-l Macnamara,Merlin Leonhardt,Taddeo Kufus,Jos Slovick,Luke Hornsby,Jack Shalloo,Elliot Edusah,Chris Walley,Joe Mendes,Jacob James Beswick,Michael Jibson,Ian Wilson,Bradley Connor,Justin Edwards,John Hollingworth,Jamie Parker,Daniel Attwell,Samson Cox-Vinell,Jonny Lavelle,Michael Rouse,Benedict Cumberbatch,Adrian Scarborough,Richard Dempsey,Phil Cheadle,Jonah Russell,Richard Madden,Charles Alexandre,Spencer Allum,Kaine Applegate,Anj Avraam,Owun Birkett,Fabio Bocca,Jake Burnside,Harrison Cope,Richard Curtis,Luke Dixey,Tom Dunham,Kieran Geary,Joseph Aston Grant,Scott Harrington,Sammy John Heaney,Mikel Iriarte,Robin Lee,Ibrahim Majid,Ketan Majmudar,Seb Mayo,Joseph Mills,Michael Mortimer,Callum Needham,Mark Oldridge,Richard Price,Jon Ramsbottom,Josh Sanders,Mark Schneider,Will Sharp,Oliver Simms,Daniel Smales,Scott Stevenson,Richard Townsley,James Troake,Josh Turner,Patrick Walsh,James Willmott,Fraser Young', 8.4);
 
 --
 -- Indexes for dumped tables
@@ -389,13 +393,13 @@ ALTER TABLE `django_content_type`
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `movie_database_app_imdb_database`
 --
 ALTER TABLE `movie_database_app_imdb_database`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
